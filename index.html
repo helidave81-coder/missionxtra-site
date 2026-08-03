@@ -247,7 +247,7 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(7,10,16,.9)}
 .step p{color:var(--muted);font-size:.9rem}
 
 /* ---------- Gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:50px}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:50px}
 .gallery .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0d14;transition:transform .25s,border-color .25s}
 .gallery .shot:hover{transform:translateY(-6px) scale(1.02);border-color:var(--orange)}
 .gallery .shot img{width:100%}
@@ -294,6 +294,31 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(7,10,16,.9)}
 .op-help{color:var(--muted);font-size:.88rem}
 .op-help a{color:var(--orange);font-weight:600}
 @media(max-width:980px){.op-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- Mac window frame + editor showcase ---------- */
+.macwin{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);background:#0d1119;box-shadow:var(--shadow)}
+.macwin img{width:100%;display:block}
+.ed-hero{display:grid;grid-template-columns:1fr;gap:0;margin-top:46px}
+.ed-hero .macwin{transform:perspective(2000px) rotateX(2deg);transition:transform .6s}
+.ed-hero .macwin:hover{transform:none}
+.ed-caption{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.ed-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:100px;font-size:.86rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.ed-chip b{color:#fff;font-weight:600}
+.ed-rows{margin-top:clamp(60px,8vw,100px);display:flex;flex-direction:column;gap:clamp(56px,8vw,96px)}
+.edrow{display:grid;grid-template-columns:1fr 1.25fr;gap:52px;align-items:center}
+.edrow.rev .ed-txt{order:2}.edrow.rev .ed-shot{order:1}
+.ed-txt h3{font-size:clamp(1.4rem,2.4vw,1.9rem);margin:16px 0 14px;letter-spacing:-.02em}
+.ed-txt p{color:var(--muted);font-size:1.02rem}
+.ed-tag{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);padding:6px 12px;border:1px solid rgba(77,199,250,.3);border-radius:100px;background:rgba(77,199,250,.08)}
+.ed-tag.new{color:var(--orange-soft);border-color:rgba(255,107,31,.35);background:rgba(255,107,31,.1)}
+.ed-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(56px,7vw,88px)}
+.ed-mini .m{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s}
+.ed-mini .m:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+.ed-mini .m img{width:100%;display:block;border-bottom:1px solid var(--line)}
+.ed-mini .m .b{padding:18px 20px}
+.ed-mini .m h4{font-size:1rem;color:#fff;margin-bottom:6px}
+.ed-mini .m p{color:var(--muted);font-size:.87rem;line-height:1.5}
+@media(max-width:980px){.edrow{grid-template-columns:1fr;gap:28px}.edrow.rev .ed-txt,.edrow.rev .ed-shot{order:initial}.ed-mini{grid-template-columns:1fr}}
 
 /* ---------- Contact ---------- */
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
@@ -425,10 +450,10 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     <div class="reveal">
       <span class="eyebrow">⬡ Mission Management · Weight · Balance · Performance</span>
       <h1>The mission-prep flight deck for your <span class="accent">whole fleet</span>.</h1>
-      <p class="lead">MissionXtra turns weight &amp; balance, performance, fuel, weather and risk into one fast, tap-driven iPad flight deck. The AW139 leads the way, with a growing list of rotary-wing types behind it — built by operational helicopter pilots for EMS, SAR and offshore operators.</p>
+      <p class="lead">MissionXtra turns weight &amp; balance, performance, fuel, weather, crew rostering and landing-site data into one fast, tap-driven iPad flight deck — paired with a Mac editor that keeps your whole fleet in sync. Built by operational helicopter pilots for EMS, SAR and offshore operators.</p>
       <div class="hero-cta">
-        <a href="#download" class="btn btn-primary btn-lg">Get MissionXtra</a>
-        <a href="#operator" class="btn btn-ghost btn-lg">Operator login</a>
+        <a href="#download" class="btn btn-primary btn-lg">Get the iPad app</a>
+        <a href="#editor" class="btn btn-ghost btn-lg">See the Mission Editor</a>
       </div>
       <div class="hero-meta">
         <span><i class="dot or"></i> Built natively in Swift</span>
@@ -443,11 +468,11 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         <div><b>Within limits</b><small>Live CG &amp; mass check</small></div>
       </div>
       <div class="badge-float bf-2">
-        <span class="ic" style="background:rgba(255,107,31,.15);color:var(--orange)">⛽</span>
-        <div><b>2:53 endurance</b><small>To reserve · live fuel</small></div>
+        <span class="ic" style="background:rgba(77,199,250,.15);color:var(--cyan)">📈</span>
+        <div><b>PC1 · Cat A</b><small>Live performance class</small></div>
       </div>
       <div class="ipad hero-ipad">
-        <img src="assets/screens/deck-fuel.png" alt="MissionXtra flight deck showing the AW139 seat map, environment, performance and fuel" loading="eager"/>
+        <img src="assets/screens/deck-hero.png" alt="MissionXtra flight deck showing the cabin seat map, environment, performance class and dual CG envelopes" loading="eager"/>
       </div>
     </div>
   </div>
@@ -473,11 +498,11 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     </div>
     <div class="cards">
       <div class="card reveal"><div class="ico">🧮</div><h3>Live tap-to-load W&amp;B</h3><p>Load crew, patients, equipment and fuel directly on a scaled aircraft fuselage. CG, limits and margins recompute instantly — no spreadsheet juggling.</p></div>
-      <div class="card cy reveal"><div class="ico">📈</div><h3>RFM-accurate performance</h3><p>RFM Cat A take-off procedures, WAT limits, OEI climb, CTO/RTO distances and Height-Velocity — computed for your exact conditions.</p></div>
-      <div class="card gd reveal"><div class="ico">🌦️</div><h3>Live weather &amp; fuel</h3><p>METAR/TAF auto-fills per leg with no login. Endurance, time-to-reserve and below-reserve alerts at a glance.</p></div>
-      <div class="card cy reveal"><div class="ico">🗺️</div><h3>Mission planning &amp; import</h3><p>Build multi-leg missions in seconds or AirDrop an OzRunways plan — legs, LSALT, fuel and ETAs parse straight in.</p></div>
-      <div class="card reveal"><div class="ico">🛡️</div><h3>Risk assessment &amp; signed manifest</h3><p>A structured flight risk-assessment tool plus a professional, finger-signed A4 load manifest PDF — shared in a tap.</p></div>
-      <div class="card gd reveal"><div class="ico">✈️</div><h3>MCDU read-across</h3><p>A faithful AW139 PERFORMANCE INIT-KG CDU page so you can transcribe straight into the aircraft FMS.</p></div>
+      <div class="card cy reveal"><div class="ico">📈</div><h3>Obstacle-aware performance</h3><p>Five RFM take-off procedures and four landing techniques, with the app solving for the lowest TDP that clears your obstacle — and flagging when you fall outside PC1.</p></div>
+      <div class="card gd reveal"><div class="ico">📍</div><h3>Your own HLS register</h3><p>Surveyed landing sites with their real approach and departure obstacles — pre-filling the performance page the moment a leg lands there.</p></div>
+      <div class="card cy reveal"><div class="ico">🌦️</div><h3>Weather that follows the plan</h3><p>Departure METAR at take-off, destination TAF at ETA — auto-refreshed per leg, with area-QNH fallback for off-aerodrome sites.</p></div>
+      <div class="card reveal"><div class="ico">🗓️</div><h3>Shift roster, synced</h3><p>Day and night crews rostered per base in the editor, published to every iPad — so the right crew loads with one tap.</p></div>
+      <div class="card gd reveal"><div class="ico">📋</div><h3>Manifest, report &amp; share</h3><p>A signed A4 load manifest, an end-of-mission flight report, and one-tap AirDrop of the whole flight to another crew's iPad.</p></div>
     </div>
   </div>
 </section>
@@ -498,16 +523,17 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
           <li><span class="tick">✓</span><div><b>SUPP kit MTOW handling</b><small>6,400 → 6,800 → 7,000 kg, driven by each tail's fitted kits.</small></div></li>
         </ul>
       </div>
-      <div class="fmedia"><div class="glow"></div><div class="ipad"><img src="assets/screens/cg-envelope.png" alt="Dual CG envelope charts with the loading line"/></div></div>
+      <div class="fmedia"><div class="glow"></div><div class="ipad"><img src="assets/screens/load-manifest.png" alt="Signed A4 load manifest with item table and dual CG envelope charts"/></div></div>
     </div>
 
     <div class="feature-row rev reveal">
       <div class="ftext">
         <span class="eyebrow">Crew &amp; Cabin</span>
-        <h2>Your roster, weights and configs — already loaded</h2>
-        <p>Crew names and weights sync from your operator, so you stop re-entering them every flight. Switch cabin configurations — IHT, 12-pax, winch — and watch every limit and station update live.</p>
+        <h2>Today's crew, already on the aircraft</h2>
+        <p>Your operator rosters day and night crews per base in the Mission Editor. The iPad knows which shift is on now — load the whole crew with one tap, with weights already verified. Switch cabin configurations and every limit and station updates live.</p>
         <ul class="flist">
-          <li><span class="tick">✓</span><div><b>Synced crew directory</b><small>Name auto-fill with weights maintained centrally.</small></div></li>
+          <li><span class="tick">✓</span><div><b>One-tap shift crew</b><small>The roster for this base and this shift, loaded and seated.</small></div></li>
+          <li><span class="tick">✓</span><div><b>Roster-change advisory</b><small>Tells you who's in and who's out — seats are never changed without you.</small></div></li>
           <li><span class="tick">✓</span><div><b>Per-config equipment toggles</b><small>Fit or remove items and add ad-hoc equipment for this flight.</small></div></li>
           <li><span class="tick">✓</span><div><b>Placard &amp; station overload detection</b><small>Master-caution alert names the exact violation.</small></div></li>
         </ul>
@@ -519,14 +545,15 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
       <div class="ftext">
         <span class="eyebrow">Fuel · Weather · Route</span>
         <h2>Every leg gets the forecast for <em>its</em> time</h2>
-        <p>Build a route from ICAO codes or lat/long, or import the plan you already made. Per-leg TAF interpolation, area QNH fallback for scene sites and terrain-grid elevation mean usable weather even off-aerodrome — with endurance and reserves front and centre.</p>
+        <p>Build a route from ICAO codes or lat/long, or import the plan you already made. The app pulls the departure METAR for take-off and the destination TAF for your ETA — with area-QNH fallback for scene sites and terrain elevation for bare coordinates.</p>
         <ul class="flist">
+          <li><span class="tick">✓</span><div><b>Weather follows the flight plan</b><small>Departure and destination refresh per leg, automatically.</small></div></li>
           <li><span class="tick">✓</span><div><b>OzRunways .ozpln import</b><small>Fly the plan you built — no re-keying.</small></div></li>
-          <li><span class="tick">✓</span><div><b>BoM → PilotAssist → NOAA fallback</b><small>Real conditions, no separate subscription.</small></div></li>
+          <li><span class="tick">✓</span><div><b>Per-leg configurations</b><small>Depart in one fit, return in another — each leg keeps its own.</small></div></li>
           <li><span class="tick">✓</span><div><b>Endurance &amp; below-reserve alerting</b><small>Instant fuel-state confidence for the whole mission.</small></div></li>
         </ul>
       </div>
-      <div class="fmedia"><div class="glow"></div><div class="ipad"><img src="assets/screens/flight-plan.png" alt="Multi-leg flight plan with per-leg weather"/></div></div>
+      <div class="fmedia"><div class="glow"></div><div class="ipad"><img src="assets/screens/flight-plan.png" alt="Multi-leg flight plan with per-leg departure and destination weather"/></div></div>
     </div>
 
   </div>
@@ -542,17 +569,17 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     </div>
     <div class="spotlight reveal">
       <div class="s-text">
-        <span class="pill amber">⚠ Capability flagged at TOW</span>
-        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin:18px 0 14px">Drag the rotate height. Watch obstacle clearance update.</h2>
-        <p style="color:var(--muted);font-size:1.02rem">Vertical, Clear Area, Confined Area, Short Field and Back-Up take-offs each carry their own WAT limit, OEI climb and CTO/RTO distances. The live Take-Off and Obstacle profiles turn green when the path is suitable — and the app never hides when you're outside PC1.</p>
+        <span class="pill green">✓ PC1 · Cat A at TOW 6,215 kg</span>
+        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin:18px 0 14px">It solves for the lowest TDP that clears your obstacle.</h2>
+        <p style="color:var(--muted);font-size:1.02rem">Vertical, Clear Area, Confined Area, Short Field and Back-Up take-offs each carry their own WAT limit, OEI climb and distances. Enter the obstacle and MissionXtra searches the Cat A band for the lowest rotate height that clears it — then tells you plainly when no TDP will, and drops you to PC2WE rather than hiding it.</p>
         <ul class="flist" style="margin-top:22px">
-          <li><span class="tick">✓</span><div><b>5 RFM Cat A procedures</b></div></li>
-          <li><span class="tick">✓</span><div><b>WAT, OEI ROC, PATH2 gradient, HOGE, density altitude</b></div></li>
-          <li><span class="tick">✓</span><div><b>Departure &amp; landing phases, plus the HV avoid-curve</b></div></li>
-          <li><span class="tick">✓</span><div><b>RFM chart browser with weight crosshair</b><small>Trace every figure back to the approved source chart.</small></div></li>
+          <li><span class="tick">✓</span><div><b>5 take-off procedures · 4 landing techniques</b><small>Heliport, Confined, Offshore Helideck and Clear Area, each with its own LDP.</small></div></li>
+          <li><span class="tick">✓</span><div><b>Live take-off, obstacle &amp; landing profiles</b><small>Drawn to scale with PATH 1 / PATH 2, drop-down and V<sub>TOSS</sub>.</small></div></li>
+          <li><span class="tick">✓</span><div><b>Rearward &amp; lateral obstacle checks</b><small>Confined-area zone and site-width checks, not just the front.</small></div></li>
+          <li><span class="tick">✓</span><div><b>WAT, OEI ROC, PATH2 gradient, CTO distance, HOGE</b></div></li>
         </ul>
       </div>
-      <div class="s-media"><div class="ipad"><img src="assets/screens/performance-takeoff.png" alt="Performance take-off profile with rotate/TDP slider"/></div></div>
+      <div class="s-media"><div class="ipad"><img src="assets/screens/perf-confined.png" alt="Confined-area take-off profile showing the rearward climb, TDP and obstacle clearance"/></div></div>
     </div>
   </div>
 </section>
@@ -560,35 +587,74 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
 <!-- MISSION EDITOR -->
 <section class="block editor-sec" id="editor">
   <div class="wrap">
-    <div class="section-head reveal" style="margin-bottom:54px">
-      <span class="eyebrow">For operators · Mac app &amp; web portal</span>
+    <div class="section-head reveal" style="margin-bottom:10px">
+      <span class="eyebrow">For operators · Mac app</span>
       <h2 style="margin-top:18px">The Mission Editor — your fleet's command centre</h2>
-      <p class="lead">A native macOS app and secure web portal where operators author, sign off and publish their own approved data over-the-air to every pilot's iPad. Author → sign off &amp; validate → publish → your crews fly it.</p>
+      <p class="lead">A native Mac app where your team authors aircraft, configurations, crew, rosters and landing sites — then publishes it over-the-air to every pilot's iPad. Author → check → publish → your crews fly it.</p>
     </div>
-    <div class="editor-grid reveal">
-      <div>
-        <div class="flow"><b>Author</b><span class="arrow">→</span><b>Sign off &amp; lock</b><span class="arrow">→</span><b>Publish OTA</b><span class="arrow">→</span><b>Pilots fly it</b></div>
-        <div class="editor-feats">
-          <div class="efeat"><div class="h">📐 Aircraft &amp; templates</div><p>Tail editor with BEM, CG arms and SUPP kits. Duplicate a sister ship or start a new operator from a clean template — never with another customer's data.</p></div>
-          <div class="efeat"><div class="h">✏️ RFM chart digitiser</div><p>Calibrate two points, click the curve and turn paper or PDF flight-manual charts into precise digital performance data.</p></div>
-          <div class="efeat"><div class="h">🔒 Sign off &amp; comply</div><p>Lock W&amp;B with a signed weighing report, track re-weigh dates and drift, and see a fleet-wide sign-off dashboard.</p></div>
-          <div class="efeat"><div class="h">📡 Publish with a gate</div><p>A "flight-ready" pre-publish check blocks release until tails, configs, sign-off and data integrity all pass — versioned and checksummed.</p></div>
-          <div class="efeat"><div class="h">🏢 Operator management</div><p>Run dozens of customers from one screen: plans, seat limits, trials, branding, instant suspend/restore.</p></div>
-          <div class="efeat"><div class="h">📋 Audit &amp; billing</div><p>Append-only activity log with CSV export for compliance, plus metered per-aircraft billing and branded tax invoices.</p></div>
-        </div>
+
+    <div class="ed-hero reveal">
+      <div class="macwin"><img src="assets/editor/shift-roster.png" alt="MissionXtra Mission Editor showing the Shift Roster with day and night crews across a month"/></div>
+      <div class="ed-caption">
+        <span class="ed-chip"><b>Aircraft</b> BEM &amp; CG arms</span>
+        <span class="ed-chip"><b>Configurations</b> equipment lists</span>
+        <span class="ed-chip"><b>Crew Directory</b> names &amp; weights</span>
+        <span class="ed-chip"><b>Shift Roster</b> day / night per base</span>
+        <span class="ed-chip"><b>HLS Register</b> surveyed sites</span>
+        <span class="ed-chip"><b>Restore Data</b> point-in-time</span>
       </div>
-      <div class="editor-visual">
-        <div class="topbar"><i class="tb1"></i><i class="tb2"></i><i class="tb3"></i></div>
-        <div style="font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px"><img src="assets/icon-64.png" style="width:22px;height:22px;border-radius:6px"/> MissionXtra Mission Editor</div>
-        <div class="ed-row"><div class="l">🚁 VH-MXA · AW139</div><span class="tag cert">APPROVED</span></div>
-        <div class="ed-row"><div class="l">🚁 VH-MXB · AW139</div><span class="tag due">RE-WEIGH DUE</span></div>
-        <div class="ed-row"><div class="l">⚙️ Utility Transport · 6 seat</div><span class="tag cert">VALID</span></div>
-        <div class="ed-row"><div class="l">📊 Performance · Vertical T/O</div><span class="tag live">DIGITISED</span></div>
-        <div class="pub">
-          <div><b>✓ Flight-ready</b><div style="font-size:.8rem;color:var(--muted)">All 4 checks passed · v25</div></div>
-          <span class="btn btn-primary" style="padding:9px 16px;font-size:.85rem">Publish to Fleet</span>
+    </div>
+
+    <div class="ed-rows">
+
+      <div class="edrow reveal">
+        <div class="ed-txt">
+          <span class="ed-tag new">New · Shift Roster</span>
+          <h3>Roster day and night crews, weeks ahead</h3>
+          <p>Drag crew onto a shift, set a recurring weekly pattern, or copy a whole week forward. Expiring qualifications are flagged on the date the crew will actually fly — not just today. Publish once and every pilot's iPad loads the right crew with a single tap.</p>
+          <ul class="flist" style="margin-top:20px">
+            <li><span class="tick">✓</span><div><b>Day, Week and Month views</b><small>Per base, with a floating hub pool for shared crew.</small></div></li>
+            <li><span class="tick">✓</span><div><b>Recurring weekly patterns</b><small>Auto-fill every matching date, then override the exceptions.</small></div></li>
+            <li><span class="tick">✓</span><div><b>Qualification badges</b><small>Advisory only — it never blocks a roster.</small></div></li>
+          </ul>
         </div>
+        <div class="ed-shot"><div class="macwin"><img src="assets/editor/crew-directory.png" alt="Crew Directory with bases, crew overview and Check &amp; Training compliance"/></div></div>
       </div>
+
+      <div class="edrow rev reveal">
+        <div class="ed-txt">
+          <span class="ed-tag new">New · HLS Register</span>
+          <h3>Turn your site survey folder into live performance data</h3>
+          <p>Record each landing site's surveyed departure and approach obstacles the way the flight manual actually assesses them — balked-landing obstacles beyond the pad, approach obstacles under the path, and the rearward obstacle for confined-area work. When a plan lands there, the pilot's iPad pre-fills elevation, obstacle and limits automatically.</p>
+          <ul class="flist" style="margin-top:20px">
+            <li><span class="tick">✓</span><div><b>Matched to your flight-plan waypoints</b><small>Pairs to the leg by location code.</small></div></li>
+            <li><span class="tick">✓</span><div><b>Annotated site photos</b><small>Aerials and departure-path diagrams on the pilot's site card.</small></div></li>
+            <li><span class="tick">✓</span><div><b>Clearly badged as operator survey data</b><small>Advisory, and overridable in one tap.</small></div></li>
+          </ul>
+        </div>
+        <div class="ed-shot"><div class="macwin"><img src="assets/editor/hls-register.png" alt="HLS Register showing a surveyed site with departure and approach obstacle data"/></div></div>
+      </div>
+
+      <div class="edrow reveal">
+        <div class="ed-txt">
+          <span class="ed-tag new">New · Restore Data</span>
+          <h3>Undo a bad publish yourself, in under a minute</h3>
+          <p>Every version you've ever published is kept and checksum-verified. Pick an earlier point, read a plain-English diff of what comes back and what goes, and re-publish. Nothing is deleted, so you can always roll forward again — and signed-off tails are protected from rollback by design.</p>
+          <ul class="flist" style="margin-top:20px">
+            <li><span class="tick">✓</span><div><b>Full publish history</b><small>The current release is badged so you always know what pilots hold.</small></div></li>
+            <li><span class="tick">✓</span><div><b>Integrity checked before restore</b><small>A corrupt backup simply won't be applied.</small></div></li>
+            <li><span class="tick">✓</span><div><b>No support ticket required</b><small>Operators recover their own data.</small></div></li>
+          </ul>
+        </div>
+        <div class="ed-shot"><div class="macwin"><img src="assets/editor/restore-data.png" alt="Restore Data showing the publish history timeline with the current release badged"/></div></div>
+      </div>
+
+    </div>
+
+    <div class="ed-mini">
+      <div class="m reveal"><img src="assets/editor/configurations.png" alt="Configurations editor with equipment item list"/><div class="b"><h4>Configurations &amp; equipment</h4><p>Build each cabin fit item by item, preview the W&amp;B before you publish, and save any config as a reusable template.</p></div></div>
+      <div class="m reveal"><img src="assets/editor/live-ipads.png" alt="Live on pilots' iPads showing in-sync status"/><div class="b"><h4>Live on pilots' iPads</h4><p>See at a glance whether your crews hold your latest release — with the live version, publish time and change note.</p></div></div>
+      <div class="m reveal"><img src="assets/editor/aircraft.png" alt="Aircraft editor with basic empty mass and CG arms"/><div class="b"><h4>Aircraft, imports &amp; reports</h4><p>Paste a fleet straight from a spreadsheet, duplicate a sister ship, and export branded fleet reports and activity history.</p></div></div>
     </div>
   </div>
 </section>
@@ -599,9 +665,10 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     <div class="op-grid reveal">
       <div class="op-text">
         <span class="eyebrow">Operators</span>
-        <h2 style="margin:18px 0 16px">Manage your fleet from anywhere</h2>
-        <p style="color:var(--muted);font-size:1.05rem">Sign in to the MissionXtra operator portal to edit your aircraft, configurations, crew and branding, then publish approved data over-the-air to every pilot's iPad. The web portal and the macOS Mission Editor share one backend, so your fleet stays perfectly in sync.</p>
+        <h2 style="margin:18px 0 16px">Your portal — and where the Editor lives</h2>
+        <p style="color:var(--muted);font-size:1.05rem">Sign in to the MissionXtra client portal to <b style="color:#fff">download the Mission Editor for Mac</b> and manage your fleet online. The Editor isn't sold in any app store — it's issued to operators through this portal, and keeps itself up to date automatically once installed.</p>
         <ul class="flist" style="margin-top:24px">
+          <li><span class="tick">✓</span><div><b>Download the Mission Editor</b><small>Signed &amp; notarised Mac app, for licensed operators only.</small></div></li>
           <li><span class="tick">✓</span><div><b>Edit aircraft, configs, crew &amp; branding</b><small>Everything your pilots see, managed in one place.</small></div></li>
           <li><span class="tick">✓</span><div><b>Publish versioned data over-the-air</b><small>Full version history with one-click rollback.</small></div></li>
           <li><span class="tick">✓</span><div><b>Secured with two-factor authentication</b><small>Each operator's data is isolated with row-level security.</small></div></li>
@@ -631,8 +698,8 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     </div>
     <div class="steps">
       <div class="step reveal"><h3>Pick aircraft &amp; config</h3><p>Choose the tail and cabin configuration — your operator's approved data is already synced.</p></div>
-      <div class="step reveal"><h3>Load the cabin</h3><p>Tap or drag crew, patients, equipment and fuel onto the seat map and watch CG settle live.</p></div>
-      <div class="step reveal"><h3>Plan &amp; assess</h3><p>Add the route, pull weather and performance, then run the risk assessment for a documented go/no-go.</p></div>
+      <div class="step reveal"><h3>Load the cabin</h3><p>Load today's shift crew with one tap, add patients and equipment, and watch CG settle live.</p></div>
+      <div class="step reveal"><h3>Plan &amp; check</h3><p>Add the route, pull per-leg weather, and check the take-off and landing profiles against your obstacles.</p></div>
       <div class="step reveal"><h3>Sign &amp; share</h3><p>Capture the PIC signature and share a professional A4 load manifest PDF — paperless.</p></div>
     </div>
   </div>
@@ -647,16 +714,18 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
       <p class="lead">Premium, glanceable, glove-friendly — with Night, Sunlight, Daylight and Auto themes.</p>
     </div>
     <div class="gallery">
-      <div class="shot reveal"><img src="assets/screens/deck-fuel.png" alt="Flight deck"/><div class="cap">Flight deck &amp; fuel</div></div>
-      <div class="shot reveal"><img src="assets/screens/cg-envelope.png" alt="CG envelopes"/><div class="cap">CG envelopes</div></div>
-      <div class="shot reveal"><img src="assets/screens/performance-obstacle.png" alt="Obstacle profile"/><div class="cap">Obstacle profile</div></div>
-      <div class="shot reveal"><img src="assets/screens/mcdu.png" alt="MCDU page"/><div class="cap">MCDU INIT</div></div>
+      <div class="shot reveal"><img src="assets/screens/deck-hero.png" alt="Flight deck"/><div class="cap">Flight deck</div></div>
+      <div class="shot reveal"><img src="assets/screens/perf-vertical.png" alt="Vertical take-off profile"/><div class="cap">Take-off profile</div></div>
+      <div class="shot reveal"><img src="assets/screens/perf-confined.png" alt="Confined area profile"/><div class="cap">Confined area</div></div>
+      <div class="shot reveal"><img src="assets/screens/perf-obstacle.png" alt="Obstacle profile"/><div class="cap">Obstacle profile</div></div>
       <div class="shot reveal"><img src="assets/screens/load-manifest.png" alt="Load manifest PDF"/><div class="cap">Signed manifest</div></div>
       <div class="shot reveal"><img src="assets/screens/crew-pax.png" alt="Crew and pax"/><div class="cap">Crew &amp; pax</div></div>
+      <div class="shot reveal"><img src="assets/screens/fuel.png" alt="Fuel and endurance"/><div class="cap">Fuel &amp; endurance</div></div>
       <div class="shot reveal"><img src="assets/screens/flight-plan.png" alt="Flight plan"/><div class="cap">Route &amp; weather</div></div>
       <div class="shot reveal"><img src="assets/screens/mission-manager.png" alt="Mission manager"/><div class="cap">Mission manager</div></div>
-      <div class="shot reveal"><img src="assets/screens/performance-takeoff.png" alt="Take-off profile"/><div class="cap">Take-off profile</div></div>
-      <div class="shot reveal"><img src="assets/screens/setup-branding.png" alt="Setup"/><div class="cap">Setup &amp; kits</div></div>
+      <div class="shot reveal"><img src="assets/screens/flight-report.png" alt="Flight report"/><div class="cap">Flight report</div></div>
+      <div class="shot reveal"><img src="assets/screens/mcdu.png" alt="MCDU page"/><div class="cap">MCDU INIT</div></div>
+      <div class="shot reveal"><img src="assets/screens/setup.png" alt="Setup"/><div class="cap">Setup &amp; kits</div></div>
     </div>
   </div>
 </section>
@@ -676,7 +745,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         <ol>
           <li><b>Open Setup</b> and confirm the tail and fitted SUPP kits.</li>
           <li><b>Pick a configuration</b> on the Configuration tab.</li>
-          <li><b>Tap a seat</b> and enter a weight, or drag a crew card on.</li>
+          <li>On <b>Crew &amp; Pax</b>, add today's shift crew with one tap.</li>
           <li><b>Add fuel</b> on the Fuel tab and read the live verdict.</li>
           <li>Confirm the badge shows <b>Within Limits</b>.</li>
         </ol>
@@ -696,33 +765,33 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         <div class="step-tag">GUIDE 03</div>
         <h3>Run performance for the site</h3>
         <ol>
-          <li>Tap <b>Full Breakdown</b> to open Performance.</li>
+          <li>Tap <b>Full Breakdown + CG</b> to open Performance.</li>
           <li>Select the <b>take-off procedure</b> (Vertical, Confined…).</li>
-          <li>Enter <b>site elevation and obstacles</b>.</li>
-          <li>Drag the <b>Rotate/TDP slider</b> until the path is green.</li>
-          <li>Cross-check figures in the <b>RFM chart browser</b>.</li>
+          <li>Enter <b>site elevation and obstacles</b> — or let the HLS Register fill them.</li>
+          <li>Drag the <b>Rotate / TDP slider</b> until the path is green.</li>
+          <li>Switch to <b>Obstacle Profile</b> to confirm clearance.</li>
         </ol>
       </div>
       <div class="guide reveal">
         <div class="step-tag">GUIDE 04</div>
-        <h3>Assess risk &amp; sign off</h3>
+        <h3>Sign off &amp; close the mission</h3>
         <ol>
-          <li>Open the <b>Risk Assessment</b> tool.</li>
-          <li>Score Crew, Weather, Mission, Aircraft &amp; Environment.</li>
-          <li>Note the <b>LOW / MEDIUM / HIGH</b> band and authority.</li>
-          <li>Open <b>Load Manifest</b> and capture the PIC signature.</li>
+          <li>Open <b>Load Manifest</b> and review the item table.</li>
+          <li>Capture the <b>PIC signature</b> on glass.</li>
           <li><b>Share</b> the signed A4 PDF to dispatch.</li>
+          <li>Use <b>Share Flight</b> to AirDrop the flight to another crew.</li>
+          <li>After the last leg, open the <b>Flight report</b>.</li>
         </ol>
       </div>
       <div class="guide reveal">
         <div class="step-tag">GUIDE 05 · OPERATORS</div>
-        <h3>Publish data to your fleet</h3>
+        <h3>Roster crews &amp; publish</h3>
         <ol>
-          <li>In the <b>Mission Editor</b>, edit the tail or config.</li>
-          <li><b>Sign off &amp; lock</b> with the weighing report.</li>
-          <li>Clear the <b>flight-ready</b> pre-publish gate.</li>
-          <li>Click <b>Publish to Fleet</b> with a change note.</li>
-          <li>Pilots receive the new <b>versioned data</b> automatically.</li>
+          <li>In the <b>Mission Editor</b>, open <b>Shift Roster</b>.</li>
+          <li>Drag crew onto day and night shifts, or set a <b>weekly pattern</b>.</li>
+          <li>Click <b>Publish Roster</b> to push it to your iPads.</li>
+          <li>Edit tails or configs, then <b>Publish</b> the fleet data.</li>
+          <li>Check <b>Tools → Live on pilots' iPads</b> to confirm they're in sync.</li>
         </ol>
       </div>
       <div class="guide reveal" style="background:linear-gradient(160deg,rgba(255,107,31,.1),var(--bg-2));border-color:rgba(255,107,31,.35);display:flex;flex-direction:column;justify-content:center">
@@ -796,9 +865,11 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
       <details><summary>Is MissionXtra a certified EFB or FMS?</summary><div class="ans">No. MissionXtra is an operational support tool and planning aid. It is <b>not certified</b> by CASA, EASA, FAA or any other aviation regulator as a primary flight-planning system, Electronic Flight Bag (EFB), Flight Management System (FMS), navigation system or aircraft performance-approval tool. It does not replace the approved Rotorcraft Flight Manual — the operator and Pilot in Command remain solely responsible for independently verifying all data, loading, performance and operational decisions. Every screen and manifest states this clearly.</div></details>
       <details><summary>Which aircraft are supported?</summary><div class="ans">The AW139 is the full performance type — weight &amp; balance plus the complete RFM performance suite. The AW109, AS350, B412 and BK117 are supported for weight &amp; balance and MTOW. We can integrate additional types on request.</div></details>
       <details><summary>Does it work offline?</summary><div class="ans">Yes. Synced fleet data, the terrain/elevation grid and the airport database are bundled on the device, and your operator branding shows offline. Live weather needs a connection, but the core W&amp;B and performance work without one.</div></details>
-      <details><summary>How do pilots get the right data?</summary><div class="ans">Operators author and sign off their data in the macOS Mission Editor or the secure web portal, then publish it over-the-air. Each pilot's iPad receives the latest versioned, checksummed data for the types they're assigned — with a status pill and a stale-data warning so they always know what they're flying.</div></details>
+      <details><summary>How do I get the two apps?</summary><div class="ans">The <b>iPad app</b> is downloaded from the Apple App Store, so any pilot can install it and sign in with the credentials their operator issues. The <b>Mission Editor</b> for Mac is not published to any app store — licensed operators download it from their MissionXtra client portal after signing in. It's signed and notarised by Apple, runs on Apple silicon Macs, and updates itself automatically with each release verified by cryptographic signature.</div></details>
+      <details><summary>How do pilots get the right data?</summary><div class="ans">Operators author and sign off their data in the Mission Editor, then publish it over-the-air. Each pilot's iPad receives the latest versioned, checksummed data for the types they're assigned — with a status pill and a stale-data warning so they always know what they're flying. Operators can confirm at a glance via <b>Tools → Live on pilots' iPads</b>.</div></details>
+      <details><summary>What is the HLS Register?</summary><div class="ans">It's your operator's own database of surveyed helicopter landing sites — hospital pads, ALAs and confined sites — recording each one's elevation, limits, contacts, photos and the controlling obstacles on every surveyed approach and departure path. When a pilot's plan lands at a registered site, the iPad pre-fills the performance page from your survey, clearly badged as operator survey data and overridable in one tap. It is advisory information supplied by your organisation, not certified data.</div></details>
       <details><summary>How is our data kept separate and secure?</summary><div class="ans">Each operator's data is isolated at the backend with row-level security, admin keys are held only in the Mac Keychain, the web portal is protected with two-factor authentication, and an append-only audit log records who changed, signed off, suspended or published what — exportable to CSV for your compliance file.</div></details>
-      <details><summary>Who is it built for?</summary><div class="ans">Built by operational helicopter pilots, with a focus on EMS/HEMS, SAR/winch and offshore operators — though it suits any helicopter operator running a supported type. Hoist-aware envelopes, inter-hospital and primary-HEMS mission types, patient configs and the built-in risk assessment all reflect real mission-critical operations.</div></details>
+      <details><summary>Who is it built for?</summary><div class="ans">Built by operational helicopter pilots, with a focus on EMS/HEMS, SAR/winch and offshore operators — though it suits any helicopter operator running a supported type. Hoist-aware envelopes, stretcher and patient configurations, per-base day/night rostering and surveyed landing-site data all reflect real mission-critical operations.</div></details>
     </div>
   </div>
 </section>
@@ -807,13 +878,13 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
 <section class="block" id="download">
   <div class="wrap">
     <div class="cta reveal">
-      <h2>Put a flight deck in every cockpit.</h2>
-      <p class="lead">MissionXtra for iPad is in final testing. Register your interest and we'll let you know the moment it's live on the App Store — or talk to us about bringing your whole fleet onto approved, over-the-air data.</p>
+      <h2>Two apps. One source of truth.</h2>
+      <p class="lead">The iPad app comes from the App Store, so any pilot can install it. The Mission Editor is issued to operators only — you download it from your MissionXtra client portal after signing in.</p>
       <div class="cta-btns">
         <span class="btn btn-primary btn-lg" style="cursor:default"> Coming to the App Store</span>
-        <a href="mailto:admin@missionxtra.com?subject=MissionXtra%20early%20access" class="btn btn-ghost btn-lg">Register your interest</a>
+        <a href="#operator" class="btn btn-ghost btn-lg">⌘ Mission Editor — via client portal</a>
       </div>
-      <p style="color:var(--muted-2);font-size:.84rem;margin-top:20px;position:relative">iPadOS · Free trial at launch · Operator quotes available now</p>
+      <p style="color:var(--muted-2);font-size:.84rem;margin-top:20px;position:relative">iPad app: iPadOS · free trial at launch &nbsp;·&nbsp; Editor: macOS, Apple silicon — signed &amp; notarised, auto-updating</p>
     </div>
   </div>
 </section>
