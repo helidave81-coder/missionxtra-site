@@ -320,6 +320,50 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(7,10,16,.9)}
 .ed-mini .m p{color:var(--muted);font-size:.87rem;line-height:1.5}
 @media(max-width:980px){.edrow{grid-template-columns:1fr;gap:28px}.edrow.rev .ed-txt,.edrow.rev .ed-shot{order:initial}.ed-mini{grid-template-columns:1fr}}
 
+/* ---------- Configurations showcase ---------- */
+.cfg-sec{background:linear-gradient(180deg,transparent,rgba(255,107,31,.05),transparent)}
+.cfg-hero{margin-top:44px}
+.cfg-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;counter-reset:cstep}
+.cfg-step{background:linear-gradient(160deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s}
+.cfg-step:hover{transform:translateY(-5px);border-color:rgba(255,107,31,.4)}
+.cfg-step img{width:100%;display:block;border-bottom:1px solid var(--line)}
+.cfg-step .b{padding:20px 22px}
+.cfg-step .n{counter-increment:cstep;font-family:var(--mono);font-size:.72rem;color:var(--orange);letter-spacing:.1em}
+.cfg-step .n::before{content:"STEP 0" counter(cstep)}
+.cfg-step h4{font-size:1.05rem;color:#fff;margin:8px 0 7px}
+.cfg-step p{color:var(--muted);font-size:.9rem;line-height:1.55}
+.cfg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.cfg-card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:20px}
+.cfg-card .ic{font-size:1.3rem;margin-bottom:10px;display:block}
+.cfg-card h4{font-size:.98rem;color:#fff;margin-bottom:6px}
+.cfg-card p{color:var(--muted);font-size:.86rem;line-height:1.5}
+@media(max-width:980px){.cfg-steps{grid-template-columns:1fr}.cfg-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cfg-grid{grid-template-columns:1fr}}
+
+/* ---------- Plan tiers ---------- */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;align-items:stretch}
+.tier{background:linear-gradient(165deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;position:relative;transition:transform .25s,border-color .25s}
+.tier:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+.tier.feat{border-color:rgba(255,107,31,.5);box-shadow:0 30px 70px -34px rgba(255,107,31,.45)}
+.tier.feat::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--orange),#ff8a3d);color:#1a0c02;font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:5px 14px;border-radius:100px;text-transform:uppercase;white-space:nowrap}
+.tier h3{font-size:1.35rem;color:#fff;letter-spacing:-.02em}
+.tier .tsub{color:var(--muted);font-size:.92rem;margin:10px 0 20px;min-height:44px}
+.tier .tlim{display:flex;gap:18px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
+.tier .tlim div{flex:1}
+.tier .tlim b{display:block;color:#fff;font-size:1.05rem;font-weight:700}
+.tier .tlim span{color:var(--muted-2);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:22px}
+.tier ul li{display:flex;gap:10px;font-size:.92rem;color:var(--text);align-items:flex-start}
+.tier ul li::before{content:"✓";color:var(--orange);font-weight:800;flex:none}
+.tier ul li.soon{color:var(--muted-2)}
+.tier ul li.soon::before{content:"○";color:var(--muted-2)}
+.tier .btn{width:100%}
+.tier-note{text-align:center;color:var(--muted-2);font-size:.84rem;margin-top:26px}
+.addons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.addon{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:100px;font-size:.85rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.addon b{color:#fff;font-weight:600}
+@media(max-width:980px){.tiers{grid-template-columns:1fr}}
+
 /* ---------- Contact ---------- */
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .contact-info .lead{margin-top:16px}
@@ -420,6 +464,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
       <a href="#features">Features</a>
       <a href="#performance">Performance</a>
       <a href="#editor">Mission Editor</a>
+      <a href="#configurations">Configurations</a>
       <a href="#guides">Guides</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
@@ -434,6 +479,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
     <a href="#features">Features</a>
     <a href="#performance">Performance</a>
     <a href="#editor">Mission Editor</a>
+    <a href="#configurations">Configurations</a>
     <a href="#guides">Guides</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
@@ -659,6 +705,43 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
   </div>
 </section>
 
+<!-- CONFIGURATIONS -->
+<section class="block cfg-sec" id="configurations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Configurations</span>
+      <h2 style="margin-top:18px">Build any cabin fit — without waiting on us</h2>
+      <p class="lead">Every role your aircraft flies is a configuration: EMS single-stretcher, SAR hoist, utility transport, 12-passenger. You build and adjust them yourself, item by item, and your pilots see exactly what you publish.</p>
+    </div>
+
+    <div class="cfg-hero reveal">
+      <div class="macwin"><img src="assets/editor/config-items.jpg" alt="Configurations editor showing equipment items grouped by cabin zone alongside the live iPad cabin preview"/></div>
+    </div>
+
+    <div class="cfg-steps">
+      <div class="cfg-step reveal">
+        <img src="assets/editor/config-items.jpg" alt="Equipment item list with per-item toggles"/>
+        <div class="b"><div class="n"></div><h4>Add your equipment</h4><p>Enter each item with its weight, arm, quantity and cabin zone — stretchers, hoists, medical kits, seats, life rafts. Attach a reference photo so crews know exactly what it is.</p></div>
+      </div>
+      <div class="cfg-step reveal">
+        <img src="assets/editor/config-layout.jpg" alt="Cabin layout editor with draggable seats and stretchers"/>
+        <div class="b"><div class="n"></div><h4>Lay out the cabin</h4><p>Drag seats and stretchers onto the fuselage and rotate them into the real orientation. It's the same cabin map your pilots load against, so what you draw is what they tap.</p></div>
+      </div>
+      <div class="cfg-step reveal">
+        <img src="assets/editor/config-wbpreview.jpg" alt="W&amp;B preview showing loaded weight and CG against the envelope"/>
+        <div class="b"><div class="n"></div><h4>Check before you publish</h4><p>Preview the loaded weight and CG against the envelope exactly as the iPad will compute it — sweep the fuel and payload, confirm it sits within limits, then publish.</p></div>
+      </div>
+    </div>
+
+    <div class="cfg-grid">
+      <div class="cfg-card reveal"><span class="ic">🔀</span><h4>Duplicate &amp; template</h4><p>Clone a config to spin up a variant, or save it as a template to reuse across tails and bases.</p></div>
+      <div class="cfg-card reveal"><span class="ic">👁️</span><h4>Visible to pilots</h4><p>Keep a config hidden while you build it, then flip it live when it's ready to fly.</p></div>
+      <div class="cfg-card reveal"><span class="ic">🎚️</span><h4>Fitted or removed</h4><p>Toggle any item on or off. Pilots can adjust the loadout in-flight without breaking your baseline.</p></div>
+      <div class="cfg-card reveal"><span class="ic">🪝</span><h4>Winch &amp; hoist aware</h4><p>Declare the hoist fit per config so the app applies the correct extended lateral envelope.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- OPERATOR LOGIN -->
 <section class="block" id="operator">
   <div class="wrap">
@@ -808,10 +891,73 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Pricing</span>
-      <h2 style="margin-top:18px">Pricing tailored to your fleet</h2>
-      <p class="lead">Every operation is different. We scope MissionXtra to your aircraft types, tails and configurations and give you a clear written proposal — no obligation, no surprises.</p>
+      <h2 style="margin-top:18px">Plans that scale with your operation</h2>
+      <p class="lead">Three tiers, each built on the same verified weight &amp; balance and performance core. Every operation is scoped individually — tell us your types, tails and configurations and we'll put a written proposal in front of you.</p>
     </div>
-    <div class="price-grid">
+
+    <div class="tiers">
+      <div class="tier reveal">
+        <h3>Standard</h3>
+        <p class="tsub">Weight &amp; balance and performance for a single fleet.</p>
+        <div class="tlim"><div><b>Up to 10</b><span>Pilot logins</span></div><div><b>Up to 5</b><span>Aircraft</span></div></div>
+        <ul>
+          <li>Full W&amp;B engine &amp; CG envelopes</li>
+          <li>RFM performance — take-off &amp; landing</li>
+          <li>Configurations &amp; equipment database</li>
+          <li>Crew &amp; passengers, seat assignment</li>
+          <li>Branded manifest &amp; report PDFs</li>
+          <li>Mission planning (manual)</li>
+          <li>Mission Editor for your admins</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Enquire</a>
+      </div>
+
+      <div class="tier feat reveal">
+        <h3>Professional</h3>
+        <p class="tsub">Adds the connected ops layer for busier, multi-base operations.</p>
+        <div class="tlim"><div><b>Up to 25</b><span>Pilot logins</span></div><div><b>Up to 15</b><span>Aircraft</span></div></div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Mission Manager API — ops dispatch feed</li>
+          <li>Live weather (METAR / TAF)</li>
+          <li>Shift Roster &amp; Crew Directory Pro</li>
+          <li>HLS Register — surveyed landing sites</li>
+          <li>Live iPad mirror &amp; fleet reports</li>
+          <li class="soon">Flight &amp; Duty (in development)</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Request a quote</a>
+      </div>
+
+      <div class="tier reveal">
+        <h3>Enterprise</h3>
+        <p class="tsub">Everything we make, with no seat or aircraft ceiling.</p>
+        <div class="tlim"><div><b>Unlimited</b><span>Pilot logins</span></div><div><b>Unlimited</b><span>Aircraft</span></div></div>
+        <ul>
+          <li>Everything in Professional</li>
+          <li>Unlimited seats, tails &amp; bases</li>
+          <li>Single sign-on (SSO)</li>
+          <li>Self-serve pilot logins &amp; dispatch</li>
+          <li>Data restore &amp; full audit export</li>
+          <li>Priority onboarding &amp; support</li>
+          <li class="soon">Pilot Logbook (in development)</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Talk to us</a>
+      </div>
+    </div>
+
+    <p class="tier-note">Modules can also be added to any plan individually:</p>
+    <div class="addons">
+      <span class="addon"><b>HLS Register</b></span>
+      <span class="addon"><b>Shift Roster</b></span>
+      <span class="addon"><b>Crew Compliance</b> check &amp; training</span>
+      <span class="addon"><b>Data Restore</b></span>
+      <span class="addon"><b>Live iPad Mirror</b></span>
+      <span class="addon"><b>Fleet Reports</b></span>
+      <span class="addon"><b>Mission Dispatch</b></span>
+      <span class="addon"><b>SSO</b></span>
+    </div>
+
+    <div class="price-grid" style="margin-top:60px">
       <div class="price reveal">
         <h3>Start with a trial</h3>
         <div class="amt">Free</div>
@@ -824,23 +970,10 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         </ul>
         <a href="#download" class="btn btn-ghost">Get the app</a>
       </div>
-      <div class="price feat reveal">
-        <h3>Operator subscription</h3>
-        <div class="amt am-quote">By quote</div>
-        <div class="sub">Everything your operation needs, scoped to your fleet.</div>
-        <ul>
-          <li>Approved OTA fleet data</li>
-          <li>Hosting, updates &amp; security patches</li>
-          <li>Per-operator branding</li>
-          <li>Support &amp; ongoing improvements</li>
-          <li>Mission Editor + web portal for admins</li>
-        </ul>
-        <a href="mailto:admin@missionxtra.com?subject=MissionXtra%20quote%20request" class="btn btn-primary">Request a quote</a>
-      </div>
       <div class="price reveal">
         <h3>Type integration &amp; onboarding</h3>
-        <div class="amt am-quote">By quote</div>
-        <div class="sub">One-off setup so the app mirrors your fleet exactly.</div>
+        <div class="amt am-quote">One-off</div>
+        <div class="sub">Setup so the app mirrors your fleet exactly.</div>
         <ul>
           <li>Your W&amp;B &amp; performance data</li>
           <li>Your configurations &amp; stations</li>
@@ -849,8 +982,21 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         </ul>
         <a href="mailto:admin@missionxtra.com?subject=MissionXtra%20type%20integration" class="btn btn-ghost">Enquire now</a>
       </div>
+      <div class="price reveal">
+        <h3>Included with every plan</h3>
+        <div class="amt am-quote">Always</div>
+        <div class="sub">The things we don't charge extra for.</div>
+        <ul>
+          <li>Hosting, updates &amp; security patches</li>
+          <li>Over-the-air data publishing</li>
+          <li>Per-operator branding</li>
+          <li>Mission Editor for your admins</li>
+          <li>Support &amp; ongoing improvements</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Ask a question</a>
+      </div>
     </div>
-    <p class="price-note">MissionXtra is priced per fleet, based on your aircraft types, tails and configurations. <a href="mailto:admin@missionxtra.com?subject=MissionXtra%20quote%20request" style="color:var(--orange);font-weight:600">Request a tailored proposal →</a></p>
+    <p class="price-note">Plans are scoped per fleet — by aircraft type, tails and configurations. <a href="mailto:admin@missionxtra.com?subject=MissionXtra%20quote%20request" style="color:var(--orange);font-weight:600">Request a tailored proposal →</a></p>
   </div>
 </section>
 
@@ -954,6 +1100,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         <a href="#features">Features</a>
         <a href="#performance">Performance</a>
         <a href="#editor">Mission Editor</a>
+        <a href="#configurations">Configurations</a>
         <a href="#operator">Operator Login</a>
         <a href="#pricing">Pricing</a>
       </div>
