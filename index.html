@@ -359,8 +359,13 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(7,10,16,.9)}
 .tier ul li.soon::before{content:"○";color:var(--muted-2)}
 .tier .btn{width:100%}
 .tier-note{text-align:center;color:var(--muted-2);font-size:.84rem;margin-top:26px}
-.addons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
-.addon{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:100px;font-size:.85rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.addon-block{margin-top:44px;background:linear-gradient(160deg,rgba(77,199,250,.06),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,42px)}
+.addon-head{text-align:center;max-width:660px;margin:0 auto}
+.addon-head h3{font-size:clamp(1.3rem,2.2vw,1.7rem);margin:14px 0 10px}
+.addon-head p{color:var(--muted);font-size:.98rem}
+.addons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+.addon{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:100px;font-size:.85rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);transition:border-color .2s,transform .2s}
+.addon:hover{border-color:var(--line-strong);transform:translateY(-2px)}
 .addon b{color:#fff;font-weight:600}
 @media(max-width:980px){.tiers{grid-template-columns:1fr}}
 
@@ -649,6 +654,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
         <span class="ed-chip"><b>HLS Register</b> surveyed sites</span>
         <span class="ed-chip"><b>Restore Data</b> point-in-time</span>
       </div>
+      <p style="text-align:center;color:var(--muted-2);font-size:.84rem;margin-top:16px">Aircraft, Configurations and Crew Directory are included with every plan. Shift Roster, HLS Register and Restore Data are <a href="#pricing" style="color:var(--orange);font-weight:600">optional modules</a>.</p>
     </div>
 
     <div class="ed-rows">
@@ -907,7 +913,9 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
           <li>Crew &amp; passengers, seat assignment</li>
           <li>Branded manifest &amp; report PDFs</li>
           <li>Mission planning (manual)</li>
+          <li>RFM chart library</li>
           <li>Mission Editor for your admins</li>
+          <li>Certification &amp; audit trail</li>
         </ul>
         <a href="#contact" class="btn btn-ghost">Enquire</a>
       </div>
@@ -920,9 +928,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
           <li>Everything in Standard</li>
           <li>Mission Manager API — ops dispatch feed</li>
           <li>Live weather (METAR / TAF)</li>
-          <li>Shift Roster &amp; Crew Directory Pro</li>
-          <li>HLS Register — surveyed landing sites</li>
-          <li>Live iPad mirror &amp; fleet reports</li>
+          <li>Higher seat &amp; aircraft allowance</li>
           <li class="soon">Flight &amp; Duty (in development)</li>
         </ul>
         <a href="#contact" class="btn btn-primary">Request a quote</a>
@@ -930,14 +936,11 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
 
       <div class="tier reveal">
         <h3>Enterprise</h3>
-        <p class="tsub">Everything we make, with no seat or aircraft ceiling.</p>
+        <p class="tsub">The full platform, with no seat or aircraft ceiling.</p>
         <div class="tlim"><div><b>Unlimited</b><span>Pilot logins</span></div><div><b>Unlimited</b><span>Aircraft</span></div></div>
         <ul>
           <li>Everything in Professional</li>
           <li>Unlimited seats, tails &amp; bases</li>
-          <li>Single sign-on (SSO)</li>
-          <li>Self-serve pilot logins &amp; dispatch</li>
-          <li>Data restore &amp; full audit export</li>
           <li>Priority onboarding &amp; support</li>
           <li class="soon">Pilot Logbook (in development)</li>
         </ul>
@@ -945,16 +948,24 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
       </div>
     </div>
 
-    <p class="tier-note">Modules can also be added to any plan individually:</p>
-    <div class="addons">
-      <span class="addon"><b>HLS Register</b></span>
-      <span class="addon"><b>Shift Roster</b></span>
-      <span class="addon"><b>Crew Compliance</b> check &amp; training</span>
-      <span class="addon"><b>Data Restore</b></span>
-      <span class="addon"><b>Live iPad Mirror</b></span>
-      <span class="addon"><b>Fleet Reports</b></span>
-      <span class="addon"><b>Mission Dispatch</b></span>
-      <span class="addon"><b>SSO</b></span>
+    <div class="addon-block reveal">
+      <div class="addon-head">
+        <span class="ed-tag">Optional modules</span>
+        <h3>Add only what your operation needs</h3>
+        <p>These are separate modules, priced individually and available on any plan — so you're never paying for capability you don't use.</p>
+      </div>
+      <div class="addons">
+        <span class="addon"><b>HLS Register</b> surveyed landing sites</span>
+        <span class="addon"><b>Shift Roster</b> day / night crews per base</span>
+        <span class="addon"><b>Crew Directory Pro</b></span>
+        <span class="addon"><b>Crew Compliance</b> check &amp; training</span>
+        <span class="addon"><b>Mission Dispatch</b></span>
+        <span class="addon"><b>Live iPad Mirror</b></span>
+        <span class="addon"><b>Fleet Reports</b></span>
+        <span class="addon"><b>Data Restore</b></span>
+        <span class="addon"><b>Self-serve pilot logins</b></span>
+        <span class="addon"><b>Single sign-on (SSO)</b></span>
+      </div>
     </div>
 
     <div class="price-grid" style="margin-top:60px">
