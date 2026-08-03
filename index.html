@@ -95,10 +95,18 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(7,10,16,.9)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em;font-size:1.12rem}
 .brand img{width:34px;height:34px;border-radius:9px;box-shadow:0 6px 18px -6px rgba(0,0,0,.7)}
 .brand b{color:#fff}.brand span{color:var(--orange)}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:.93rem;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links{display:flex;align-items:center;gap:26px;flex:0 1 auto;min-width:0}
+.nav-links a{font-size:.9rem;color:var(--muted);font-weight:500;transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:#fff}
-.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-cta{display:flex;align-items:center;gap:12px;flex:none}
+.nav-cta .btn{white-space:nowrap}
+.brand{flex:none}
+/* collapse to the mobile menu before the links can collide with the buttons */
+@media(max-width:1240px){
+  .nav-links,.nav-cta .btn-ghost{display:none}
+  .menu-toggle{display:block}
+  .mobile-menu.open{display:flex}
+}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   font-weight:600;font-size:.95rem;cursor:pointer;border:none;
@@ -929,7 +937,6 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
           <li>Mission Manager API — ops dispatch feed</li>
           <li>Live weather (METAR / TAF)</li>
           <li>Higher seat &amp; aircraft allowance</li>
-          <li class="soon">Flight &amp; Duty (in development)</li>
         </ul>
         <a href="#contact" class="btn btn-primary">Request a quote</a>
       </div>
@@ -942,7 +949,8 @@ footer{border-top:1px solid var(--line);margin-top:clamp(60px,9vw,110px);padding
           <li>Everything in Professional</li>
           <li>Unlimited seats, tails &amp; bases</li>
           <li>Priority onboarding &amp; support</li>
-          <li class="soon">Pilot Logbook (in development)</li>
+          <li>Flight &amp; Duty and Pilot Logbook, as released</li>
+          <li>First access to new capability</li>
         </ul>
         <a href="#contact" class="btn btn-ghost">Talk to us</a>
       </div>
